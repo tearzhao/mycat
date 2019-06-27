@@ -17,7 +17,7 @@ public class SalesmanServiceTest {
 
   @Test
   public void testFindAll() {
-    service.findAll().forEach(salesman -> System.out.println(salesman.toString()));
+    service.findAll().forEach(salesman -> System.out.println(" 【zyl:  SalesmanServiceTest.testFindAll()】------->>>   salesman == " + salesman.toString()));
   }
 
   @Test
@@ -32,5 +32,7 @@ public class SalesmanServiceTest {
     salesman.setDisabled(0);
 
     service.save(salesman);
+
+    System.out.println(" 【zyl:  SalesmanServiceTest.testSave()】------->>>   salesman == " + salesman.toString());
   }
 }
