@@ -7,7 +7,7 @@ spring:
     name: mycat-jpa
   datasource:
     platform: mysql
-    #    type: com.zaxxer.hikari.HikariDataSource
+#    type: com.zaxxer.hikari.HikariDataSource
     driver-class-name: com.mysql.jdbc.Driver
     url: jdbc:mysql://localhost:8066/test_mycat_schema?useUnicode=true&characterEncoding=utf-8&autoReconnect=true&failOverReadOnly=false&useSSL=false
     username: root
