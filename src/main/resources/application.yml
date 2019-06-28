@@ -43,7 +43,11 @@ spring:
     hibernate.ddl-auto: none        # Hibernate ddl auto (create, create-drop, update  none)
     hibernate:
       naming:
+        #//1.PhysicalNamingStrategyStandardImpl：不做修改，直接映射
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl    # Naming strategy   #spring.jpa.hibernate.naming-strategy=org.hibernate.cfg.DefaultNamingStrategy
+        #//2.SpringPhysicalNamingStrategy:在进行领域映射时,首字母小写，大写字母变为下划线加小写
+#        physical-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy    # Naming strategy   #spring.jpa.hibernate.naming-strategy=org.hibernate.cfg.DefaultNamingStrategy
+#        physical-strategy: org.hibernate.cfg.DefaultNamingStrategy # test cyberplus-meta
     properties:
       hibernate:
         current_session_context_class: org.springframework.orm.hibernate5.SpringSessionContext   # stripped before adding them to the entity manager)    #spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.MySQL5Dialect
