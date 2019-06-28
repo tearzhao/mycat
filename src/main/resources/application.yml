@@ -2,20 +2,60 @@
 server:
   port: 80
 
+#spring:
+#  application:
+#    name: mycat-jpa
+#  datasource:
+#    platform: mysql
+#    #    type: com.zaxxer.hikari.HikariDataSource
+#    driver-class-name: com.mysql.jdbc.Driver
+#    url: jdbc:mysql://localhost:8066/test_mycat_schema?useUnicode=true&characterEncoding=utf-8&autoReconnect=true&failOverReadOnly=false&useSSL=false
+#    username: root
+#    password: 123456
+#  jpa:
+#    hibernate:
+#      ddl-auto: none
+#    show-sql: true
+#    properties:
+#      hibernate:
+#        dialect: org.hibernate.dialect.MySQL5Dialect
+
+
+
 spring:
   application:
-    name: mycat-jpa
+    name: cyberplus-service-meta-cache
   datasource:
     platform: mysql
-    #    type: com.zaxxer.hikari.HikariDataSource
-    driver-class-name: com.mysql.jdbc.Driver
+    #    url: jdbc:mysql://localhost:3306/cp_meta_define?useSSL=false&characterEncoding=UTF-8
+    #    url: jdbc:mysql://10.88.1.4:3306/snd?useSSL=false&characterEncoding=UTF-8
     url: jdbc:mysql://localhost:8066/test_mycat_schema?useUnicode=true&characterEncoding=utf-8&autoReconnect=true&failOverReadOnly=false&useSSL=false
     username: root
     password: 123456
+    driver-class-name: com.mysql.jdbc.Driver
+    max-idle: 10
+    max-wait: 10000
+    min-idle: 5
+    initial-size: 5
   jpa:
+    c: MYSQL     # Specify the DBMS
+    show-sql: true      # Show or not log for each sql query
+    hibernate.ddl-auto: none        # Hibernate ddl auto (create, create-drop, update  none)
     hibernate:
-      ddl-auto: none
-    show-sql: true
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl    # Naming strategy   #spring.jpa.hibernate.naming-strategy=org.hibernate.cfg.DefaultNamingStrategy
     properties:
       hibernate:
+        current_session_context_class: org.springframework.orm.hibernate5.SpringSessionContext   # stripped before adding them to the entity manager)    #spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.MySQL5Dialect
         dialect: org.hibernate.dialect.MySQL5Dialect
+  jta:
+    transaction-manager-id: transactionManager
+  hibernate:
+    packageScan: cn.com.cyberplus.meta
+#  activiti6:
+#    host: http://9.197.10.243:8080/activiti-rest/service/           #spring.activiti6.host=http://9.197.10.243:8080/activiti-rest/service/
+#    auth:
+#      username: admin
+#      password: test
+#  counter:
+#    mod: 2

@@ -7,7 +7,7 @@ server:
 
 spring:
   #  application:
-  #    name: cyberplus-service-meta-define
+  #    name: cyberplus-service-meta-cache
   datasource:
     #    url: jdbc:mysql://localhost:3306/cp_meta_define?useSSL=false&characterEncoding=UTF-8
     #    url: jdbc:mysql://10.88.1.4:3306/snd?useSSL=false&characterEncoding=UTF-8
