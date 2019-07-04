@@ -40,7 +40,7 @@ spring:
   jpa:
     c: MYSQL     # Specify the DBMS
     show-sql: true      # Show or not log for each sql query
-    hibernate.ddl-auto: none        # Hibernate ddl auto (create, create-drop, update  none)
+    hibernate.ddl-auto: none        # Hibernate ddl auto (create, create-drop, update  validate none)
     hibernate:
       naming:
         #//1.PhysicalNamingStrategyStandardImpl：不做修改，直接映射
